@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #f0f0f0;
+		}
+	</style>
+	<link rel="stylesheet" href="catmenu.css">
+	<script>
+		(function(window,document){(function(){var viewportEl=document.querySelector('meta[name="viewport"]'),hotcssEl=document.querySelector('meta[name="hotcss"]'),dpr=window.devicePixelRatio||1;if(hotcssEl){var hotcssCon=hotcssEl.getAttribute("content");if(hotcssCon){var initialDpr=hotcssCon.match(/initial\-dpr=([\d\.]+)/);if(initialDpr){dpr=parseFloat(initialDpr[1])}}}document.documentElement.setAttribute("data-dpr",dpr);var scale=1/dpr,content="width=device-width, initial-scale="+scale+", minimum-scale="+scale+", maximum-scale="+scale+", user-scalable=no";if(viewportEl){viewportEl.setAttribute("content",content)}else{viewportEl=document.createElement("meta");viewportEl.setAttribute("name","viewport");viewportEl.setAttribute("content",content);document.head.appendChild(viewportEl)}})();var hotcss={};hotcss.px2rem=function(px,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return parseInt(px,10)*320/designWidth/20};hotcss.rem2px=function(rem,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return rem*20*designWidth/320};hotcss.mresize=function(){var innerWidth=window.innerWidth;if(!innerWidth){return false}document.documentElement.style.fontSize=(innerWidth*20/320)+"px"};hotcss.mresize();window.addEventListener("resize",function(){clearTimeout(hotcss.tid);hotcss.tid=setTimeout(hotcss.mresize,33)},false);window.addEventListener("load",hotcss.mresize,false);setTimeout(function(){hotcss.mresize()},333);window.hotcss=hotcss})(window,document);
+	</script>
+	</head>
+<body>
+	<div id="id"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+<script src="plugin-catmenu.js"></script>
+<script>
+	
+	catmenu({
+		selector : '#id', //插件要插入的位置
+		data : {
+			'头条' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'科技' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'娱乐' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'热点' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'体育' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'时尚' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'财经' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'军事' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'游戏' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'旅游' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'历史' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			},
+			'探索' : {
+				'lid' : 124,
+				'goods_id' : 153,
+			} //数据
+		},
+		tips : '自定义TIPS', //展开事后的tips文案
+		handler : function( isListClick , doScroll ){
+
+			console.log( $(this) );
+
+			if( isListClick ){
+				setTimeout(function(){
+					doScroll();
+				},300);
+			}else{
+				doScroll();
+			} //回调，如果不够组成滚动，则回调无参数。
+		}
+	})
+
+</script>
+</html>
